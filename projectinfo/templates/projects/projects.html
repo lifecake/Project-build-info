@@ -1,0 +1,44 @@
+{% block header %}
+  <h1>{% block title %}Projects INFO {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<style>
+        table,table tr th, table tr td { border:1px solid #0094ff; }
+
+ </style>
+  <table cellpadding="10">
+      <tr>
+      <thread>
+
+          <th>PackageName</th>
+          <th>ProjectName</th>
+          <th>VersionCode</th>
+          <th>VersionName</th>
+          <th>TargetSdk</th>
+          <th>MiniSdk</th>
+          <th>MappingUrl</th>
+          <th>deepLinkScheme</th>
+          <th>Buildtime</th>
+          <th>MORE</th>
+
+    </thread>
+      </tr>
+
+    {%for p in projects%}
+      <tr>
+          <td>{{p[0]}}</td>
+          <td>{{p[1]}}</td>
+          <td>{{p[2]}}</td>
+          <td>{{p[3]}}</td>
+          <td>{{p[4]}}</td>
+          <td>{{p[5]}}</td>
+          <td><a class="action" href="{{ url_for('static', filename = 'uploads/' + p[0]+ '_' + p[3] +'.html') }}">{{p[6]}}</a></td>
+          <td>{{p[7]}}</td>
+          <td>{{p[8]}}</td>
+          <td><a class="action" href="{{ url_for('projectdetail.index', a=p[0], b=p[3]) }}">Detail</a></td>
+      </tr>
+    {%endfor%}
+
+</table>
+{% endblock %}

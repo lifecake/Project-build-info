@@ -1,0 +1,32 @@
+{% block header %}
+  <h1>{% block title %}{{name}} {{version}} Detail INFO {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<style>
+        table,table tr th, table tr td { border:1px solid #0094ff; }
+
+ </style>
+  <table cellpadding="10">
+      <tr>
+      <thread>
+
+          <!--<th>ProjectName</th>-->
+          <th>libraryGroup</th>
+          <th>libraryName</th>
+          <th>libraryVersion</th>
+
+    </thread>
+      </tr>
+
+    {%for ps in projectdetails%}
+      <tr>
+          <!--<td></td>-->
+          <!--<td></td>-->
+          <td>{{ps[3]}}</td>
+          <td>{{ps[4]}}</td>
+          <td>{{ps[5]}}</td>
+      </tr>
+    {%endfor%}
+</table>
+{% endblock %}
