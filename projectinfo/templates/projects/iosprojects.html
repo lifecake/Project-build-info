@@ -1,0 +1,43 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+<body>
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='detail.css')}}">
+{% endblock %}
+
+{% block content %}
+<h1>{{iosprojectname}} Project INFO </h1>
+  <table cellpadding="10">
+      <tr>
+      <thread>
+
+          <th>ProjectName</th>
+          <th>ProjectVersion</th>
+          <th>Buildtime</th>
+          <th>x frameWrok<th>
+          <th>More</th>
+
+    </thread>
+      </tr>
+
+    {%for p in iosprojects%}
+      <tr>
+          <td>{{p[0]}}</td>
+          <td>{{p[1]}}</td>
+          <td>{{p[2]}}</td>
+          {% if p[0] | xframeWork(p[1]) %}
+            <td style="color: rgb(189, 20, 20)">Yes</td>
+          {% else %}
+            <td>NO</td>
+          {% endif %}
+          <td><a class="action" href="{{ url_for('iosprojectdetail.index', d=p[0], e=p[1]) }}">Detail</a></td>
+      </tr>
+    {%endfor%}
+
+</table>
+{% endblock %}
+</body>

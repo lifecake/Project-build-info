@@ -9,29 +9,26 @@
       href="{{url_for('static', filename='detail.css')}}">
 {% endblock %}
 {% block content %}
-<h1>{{name}} {{flavor}} {{version}} Detail Info</h1>
+<h1>{{name}} {{version}} Detail Info</h1>
   <table cellpadding="10">
       <tr>
       <thread>
-          <th>libraryGroup</th>
-          <th>libraryName</th>
-          <th>libraryVersion</th>
+          <th>frameworkName</th>
+          <th>frameworkVersion</th>
 
     </thread>
       </tr>
 
-    {%for ps in projectdetails%}
-      {% if '-SNAPSHOT' in ps[6] %}
+    {%for ps in iosprojectdetails%}
+      {%if ps[3] | checkLibraryVersion %}
       <tr style="background-color:#EE5C42; color: white">
-          <td class="table-success">{{ps[4]}}</td>
-          <td >{{ps[5]}}</td>
-          <td>{{ps[6]}}</td>
+          <td>{{ps[2]}}</td>
+          <td>{{ps[3]}}</td>
       </tr>
       {% else %}
       <tr>
-          <td>{{ps[4]}}</td>
-          <td >{{ps[5]}}</td>
-          <td>{{ps[6]}}</td>
+          <td>{{ps[2]}}</td>
+          <td>{{ps[3]}}</td>
       </tr>
       {% endif %}
     {%endfor%}

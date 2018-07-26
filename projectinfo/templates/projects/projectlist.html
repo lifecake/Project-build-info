@@ -1,0 +1,44 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Android Projects List</title>
+
+</head>
+<body>
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('static', filename='list.css')}}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container text-center" style="margin:40px auto">
+    <h1>Android Projects List</h1>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        {%for p in projectlist%}
+          <div class="col-xs-6 col-md-3" style="margin-top:60px">
+              <div class="card">
+
+                <img class="rounded mx-auto d-block text-center card-img img-circle" src="{{url_for('static',filename='Appicons/' + p[1]) + '.png'}}" alt="appicon"
+                onerror="this.src='/static/Appicons/Neulion.png'"/>
+                <h5 class="card-title" >{{p[0]}}</h5>
+                  <a href="{{ url_for('projects.index', f=p[1])}}" class="btn btn-primary text-center text-uppercase">{{p[1]}}</a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+
+
+</div>
+
+</body>
+
+{% endblock %}
