@@ -1,0 +1,30 @@
+body {
+    margin: 10px;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background: #eaeaef;
+}
+
+table{
+    width:100%;
+
+}
+
+table td {
+            padding: 8px;
+            line-height: 18px;
+            height:18px;
+
+            box-sizing:border-box;
+}
+
+table th{
+            padding: 8px;
+            line-height: 20px;
+            height:20px;
+            background:#4682B4;
+            color:#FFFFFF;
+
+}

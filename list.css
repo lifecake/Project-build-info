@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background: #eaeaef;
+}
+
+.card-img{
+    width:120px;
+    height:120px;
+    text-align:center;
+    margin:0 auto;
+    display:block;
+}
+.card h5{
+    text-wrap:none;
+    text-align:center;
+    width:200px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    margin:10px auto;
+}
+.card a{
+    text-align:center;
+    margin:10px auto;
+    display:block;
+    width:150px;
+}
