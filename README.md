@@ -1,9 +1,12 @@
 # Install
 Python:
-Install Python 3.x. https://www.python.org/downloads/
+Install Python 3.x. https://www.python.org/downloads/.
 
 Flask:
-Install Flask. PIP install Flask, if using Mac, after installing Python 3 you can use pip3 instll Flask.
+Install Flask. pip install Flask, if using Mac, after installing Python 3 you can use pip3 install Flask.
+
+Bootstrap:
+Install bootstrap. pip install flask-bootstrap.
 
 # RUN
 export FLASK_APP=flaskr
